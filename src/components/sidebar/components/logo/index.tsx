@@ -1,6 +1,19 @@
 import * as React from 'react'
 
-export function Logo() {
+interface LogoRootProps extends React.ComponentProps<'strong'> {}
+
+function LogoRoot(props: LogoRootProps) {
+  return (
+    <strong
+      className="mx-1 flex items-center gap-2 text-xl font-semibold text-zinc-900"
+      {...props}
+    />
+  )
+}
+
+interface LogoIconProps extends React.ComponentProps<'svg'> {}
+
+function LogoIcon(props: LogoIconProps) {
   return (
     <svg
       width={38}
@@ -8,6 +21,7 @@ export function Logo() {
       viewBox="0 0 38 38"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <g filter="url(#filter0_dd_18117_307)">
         <g clipPath="url(#clip0_18117_307)">
@@ -205,4 +219,18 @@ export function Logo() {
       </defs>
     </svg>
   )
+}
+
+interface LogoTextProps extends React.ComponentProps<'span'> {
+  title: string
+}
+
+function LogoText({ title, ...props }: LogoTextProps) {
+  return <span {...props}>{title}</span>
+}
+
+export const Logo = {
+  LogoRoot,
+  LogoIcon,
+  LogoText,
 }
