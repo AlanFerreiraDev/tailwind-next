@@ -12,7 +12,7 @@ import {
   Users,
 } from 'lucide-react'
 import { Logo, NavItem, Profile, UsedSpaceWidget } from './components'
-import { Input } from '../input'
+import { Input, Divider } from '@/components'
 
 export function Sidebar() {
   return (
@@ -92,7 +92,7 @@ export function Sidebar() {
           />
         </UsedSpaceWidget.UsedSpaceWidgetRoot>
 
-        <div className="h-px bg-zinc-200" />
+        <Divider />
 
         <Profile.ProfileRoot>
           <Profile.ProfileImage
