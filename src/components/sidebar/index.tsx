@@ -15,96 +15,91 @@ import { Logo, NavItem, Profile, UsedSpaceWidget } from './components'
 import { Input, Divider } from '@/components'
 
 export function Sidebar() {
+  const percentBar = '80'
   return (
     <aside className="flex flex-col gap-6 border-r border-zinc-200 px-5 py-8">
-      <Logo.LogoRoot>
-        <Logo.LogoIcon />
-        <Logo.LogoText title="Untitled UI" />
-      </Logo.LogoRoot>
+      <Logo.Root>
+        <Logo.Icon />
+        <Logo.Text title="Untitled UI" />
+      </Logo.Root>
 
-      <Input.InputRoot>
-        <Input.InputPrefix>
+      <Input.Root>
+        <Input.Prefix>
           <Search className="h-5 w-5 text-zinc-500" />
-        </Input.InputPrefix>
-        <Input.InputControl placeholder="Search..." />
-      </Input.InputRoot>
+        </Input.Prefix>
+        <Input.Control placeholder="Search..." />
+      </Input.Root>
 
       <nav className="space-y-0.5">
-        <NavItem.NavItemRoot path="/">
-          <NavItem.NavItemIcon icon={Home} />
-          <NavItem.NavItemControl title="Home" />
-          <NavItem.NavItemRightIcon icon={ChevronDown} />
-        </NavItem.NavItemRoot>
+        <NavItem.Root path="/">
+          <NavItem.Icon icon={Home} />
+          <NavItem.Control title="Home" />
+          <NavItem.RightIcon icon={ChevronDown} />
+        </NavItem.Root>
 
-        <NavItem.NavItemRoot path="/">
-          <NavItem.NavItemIcon icon={BarChart} />
-          <NavItem.NavItemControl title="Dashboard" />
-          <NavItem.NavItemRightIcon icon={ChevronDown} />
-        </NavItem.NavItemRoot>
+        <NavItem.Root path="/">
+          <NavItem.Icon icon={BarChart} />
+          <NavItem.Control title="Dashboard" />
+          <NavItem.RightIcon icon={ChevronDown} />
+        </NavItem.Root>
 
-        <NavItem.NavItemRoot path="/">
-          <NavItem.NavItemIcon icon={SquareStack} />
-          <NavItem.NavItemControl title="Projects" />
-          <NavItem.NavItemRightIcon icon={ChevronDown} />
-        </NavItem.NavItemRoot>
+        <NavItem.Root path="/">
+          <NavItem.Icon icon={SquareStack} />
+          <NavItem.Control title="Projects" />
+          <NavItem.RightIcon icon={ChevronDown} />
+        </NavItem.Root>
 
-        <NavItem.NavItemRoot path="/">
-          <NavItem.NavItemIcon icon={CheckSquare} />
-          <NavItem.NavItemControl title="Tasks" />
-          <NavItem.NavItemRightIcon icon={ChevronDown} />
-        </NavItem.NavItemRoot>
+        <NavItem.Root path="/">
+          <NavItem.Icon icon={CheckSquare} />
+          <NavItem.Control title="Tasks" />
+          <NavItem.RightIcon icon={ChevronDown} />
+        </NavItem.Root>
 
-        <NavItem.NavItemRoot path="/">
-          <NavItem.NavItemIcon icon={Flag} />
-          <NavItem.NavItemControl title="Reporting" />
-          <NavItem.NavItemRightIcon icon={ChevronDown} />
-        </NavItem.NavItemRoot>
+        <NavItem.Root path="/">
+          <NavItem.Icon icon={Flag} />
+          <NavItem.Control title="Reporting" />
+          <NavItem.RightIcon icon={ChevronDown} />
+        </NavItem.Root>
 
-        <NavItem.NavItemRoot path="/">
-          <NavItem.NavItemIcon icon={Users} />
-          <NavItem.NavItemControl title="Users" />
-          <NavItem.NavItemRightIcon icon={ChevronDown} />
-        </NavItem.NavItemRoot>
+        <NavItem.Root path="/">
+          <NavItem.Icon icon={Users} />
+          <NavItem.Control title="Users" />
+          <NavItem.RightIcon icon={ChevronDown} />
+        </NavItem.Root>
       </nav>
 
       <div className="mt-auto flex flex-col gap-6">
         <nav className="space-y-0.5">
-          <NavItem.NavItemRoot path="/">
-            <NavItem.NavItemIcon icon={LifeBuoy} />
-            <NavItem.NavItemControl title="Support" />
-          </NavItem.NavItemRoot>
+          <NavItem.Root path="/">
+            <NavItem.Icon icon={LifeBuoy} />
+            <NavItem.Control title="Support" />
+          </NavItem.Root>
 
-          <NavItem.NavItemRoot path="/">
-            <NavItem.NavItemIcon icon={Settings} />
-            <NavItem.NavItemControl title="Settings" />
-          </NavItem.NavItemRoot>
+          <NavItem.Root path="/">
+            <NavItem.Icon icon={Settings} />
+            <NavItem.Control title="Settings" />
+          </NavItem.Root>
         </nav>
 
-        <UsedSpaceWidget.UsedSpaceWidgetRoot>
-          <UsedSpaceWidget.UsedSpaceWidgetTitle
+        <UsedSpaceWidget.Root>
+          <UsedSpaceWidget.Title
             title="Used Space"
             description="Your team used 80% of your available space. Need more?"
           />
-          <UsedSpaceWidget.UsedSpaceWidgetBar value="4/5" />
-          <UsedSpaceWidget.UsedSpaceWidgetActions
+          <UsedSpaceWidget.PercentBar value={`${percentBar}%`} />
+          <UsedSpaceWidget.Actions
             titleLeft="Dismiss"
             titleRight="Upgrade Plan"
           />
-        </UsedSpaceWidget.UsedSpaceWidgetRoot>
+        </UsedSpaceWidget.Root>
 
         <Divider />
 
-        <Profile.ProfileRoot>
-          <Profile.ProfileImage
-            src="https://github.com/AlanFerreiraDev.png"
-            alt=""
-          />
-          <Profile.ProfileInfo
-            name="Alan Ferreira"
-            email="alanjjr83@gmail.com"
-          />
-          <Profile.ProfileLogoutButton icon={LogOut} />
-        </Profile.ProfileRoot>
+        <Profile.Root>
+          <Profile.Icon src="https://github.com/AlanFerreiraDev.png" alt="" />
+          <Profile.Info name="Alan Ferreira" email="alanjjr83@gmail.com" />
+          <Profile.LogoutButton icon={LogOut} />
+        </Profile.Root>
       </div>
     </aside>
   )

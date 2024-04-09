@@ -230,7 +230,7 @@ function LogoText({ title, ...props }: LogoTextProps) {
 }
 
 export const Logo = {
-  LogoRoot,
-  LogoIcon,
-  LogoText,
+  Root: LogoRoot,
+  Icon: LogoIcon,
+  Text: LogoText,
 }

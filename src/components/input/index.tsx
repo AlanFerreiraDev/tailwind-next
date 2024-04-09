@@ -29,7 +29,7 @@ function InputRoot(props: InputRootProps) {
 }
 
 export const Input = {
-  InputPrefix,
-  InputControl,
-  InputRoot,
+  Prefix: InputPrefix,
+  Control: InputControl,
+  Root: InputRoot,
 }

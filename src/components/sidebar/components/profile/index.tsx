@@ -5,13 +5,13 @@ interface ProfileRootProps extends ComponentProps<'div'> {}
 
 function ProfileRoot(props: ProfileRootProps) {
   return (
-    <div className="grid-cols-profile grid items-center gap-3" {...props} />
+    <div className="grid grid-cols-profile items-center gap-3" {...props} />
   )
 }
 
-interface ProfileImageProps extends ComponentProps<typeof Image> {}
+interface ProfileIconProps extends ComponentProps<typeof Image> {}
 
-function ProfileImage(props: ProfileImageProps) {
+function ProfileIcon(props: ProfileIconProps) {
   return (
     <Image
       width={40}
@@ -57,8 +57,8 @@ function ProfileLogoutButton({
 }
 
 export const Profile = {
-  ProfileRoot,
-  ProfileImage,
-  ProfileInfo,
-  ProfileLogoutButton,
+  Root: ProfileRoot,
+  Icon: ProfileIcon,
+  Info: ProfileInfo,
+  LogoutButton: ProfileLogoutButton,
 }

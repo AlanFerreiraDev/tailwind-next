@@ -29,15 +29,19 @@ function UsedSpaceWidgetTitle({
   )
 }
 
-interface UsedSpaceWidgetBarProps extends ComponentProps<'div'> {
+interface UsedSpaceWidgetPercentBarProps extends ComponentProps<'div'> {
   value: string
 }
 
-function UsedSpaceWidgetBar({ value, ...props }: UsedSpaceWidgetBarProps) {
+function UsedSpaceWidgetPercentBar({
+  value,
+  ...props
+}: UsedSpaceWidgetPercentBarProps) {
   return (
     <div className="h-2 rounded-full bg-violet-100" {...props}>
       <div
-        className={`h-2 w-${value} rounded-full bg-violet-500 hover:text-violet-700`}
+        className="h-2 rounded-full bg-violet-500 hover:text-violet-700"
+        style={{ width: value }}
       />
     </div>
   )
@@ -70,8 +74,8 @@ function UsedSpaceWidgetActions({
 }
 
 export const UsedSpaceWidget = {
-  UsedSpaceWidgetRoot,
-  UsedSpaceWidgetTitle,
-  UsedSpaceWidgetBar,
-  UsedSpaceWidgetActions,
+  Root: UsedSpaceWidgetRoot,
+  Title: UsedSpaceWidgetTitle,
+  PercentBar: UsedSpaceWidgetPercentBar,
+  Actions: UsedSpaceWidgetActions,
 }

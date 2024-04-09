@@ -65,9 +65,9 @@ function NavItemRightIcon({
 }
 
 export const NavItem = {
-  NavItemPrefix,
-  NavItemRoot,
-  NavItemControl,
-  NavItemIcon,
-  NavItemRightIcon,
+  Prefix: NavItemPrefix,
+  Root: NavItemRoot,
+  Control: NavItemControl,
+  Icon: NavItemIcon,
+  RightIcon: NavItemRightIcon,
 }
