@@ -1,3 +1,4 @@
+import { Button } from '@/components/button'
 import Image from 'next/image'
 import { ComponentProps, ElementType } from 'react'
 
@@ -46,13 +47,9 @@ function ProfileLogoutButton({
   ...props
 }: ProfileLogoutButtonProps) {
   return (
-    <button
-      type="button"
-      className="ml-auto rounded-md p-2 hover:bg-zinc-50"
-      {...props}
-    >
+    <Button type="button" variant="ghost" {...props}>
       <Icon className="h-5 w-5 text-zinc-500" />
-    </button>
+    </Button>
   )
 }
 
