@@ -1,5 +1,8 @@
-import { Divider, Input, SettingsTabs } from '@/components'
-import { Mail, UploadCloud, User } from 'lucide-react'
+import { Divider, Input, Select, SelectItem, SettingsTabs } from '@/components'
+import { Mail } from 'lucide-react'
+
+import * as FileInput from '@/components/form/file-input'
+import * as TextArea from '@/components/form/textarea'
 
 export default function Home() {
   return (
@@ -42,7 +45,7 @@ export default function Home() {
           id="settings"
           action=""
         >
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="firstName"
               className="text-sm font-medium text-zinc-700"
@@ -62,7 +65,7 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="email"
               className="text-sm font-medium text-zinc-700"
@@ -83,7 +86,7 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="photo"
               className="text-sm font-medium text-zinc-700"
@@ -94,39 +97,16 @@ export default function Home() {
               </span>
             </label>
 
-            <div className="flex items-start gap-5">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
-                <User className="h-8 w-8 text-violet-500" />
-              </div>
-
-              <label
-                htmlFor="photo"
-                className="hover:bg-violet-25 group flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:text-violet-500"
-              >
-                <div className="border-6 rounded-full border-zinc-50 bg-zinc-100 p-2 group-hover:border-violet-50 group-hover:bg-violet-100">
-                  <UploadCloud className="h-5 w-5 text-zinc-500 group-hover:text-violet-600" />
-                </div>
-
-                <div className="flex flex-col items-center gap-1">
-                  <span className="text=sm">
-                    <span className="font-semibold text-violet-700">
-                      Click to upload
-                    </span>{' '}
-                    or drag and drop
-                  </span>
-                  <span className="text-xs">
-                    SVG, PNG, JPG or GIF (max. 800x400px)
-                  </span>
-                </div>
-              </label>
-
-              <input className="sr-only" id="photo" type="file" />
-            </div>
+            <FileInput.Root className="flex items-start gap-5">
+              <FileInput.ImagePreview />
+              <FileInput.Trigger />
+              <FileInput.Control />
+            </FileInput.Root>
           </div>
 
           <Divider />
 
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label htmlFor="role" className="text-sm font-medium text-zinc-700">
               Role
             </label>
@@ -137,42 +117,66 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="country"
               className="text-sm font-medium text-zinc-700"
             >
               Country
             </label>
-            <div></div>
+
+            <Select placeholder="Select a Country...">
+              <SelectItem text="Brazil" value="br" />
+              <SelectItem text="United States" value="us" />
+              <SelectItem text="Canada" value="cn" />
+              <SelectItem text="Mexico" value="mx" />
+            </Select>
           </div>
 
           <Divider />
 
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="timezone"
               className="text-sm font-medium text-zinc-700"
             >
               Time Zone
             </label>
-            <div></div>
+
+            <Select placeholder="Select a Time Zone">
+              <SelectItem
+                text="Pacific Standard Time (UTC-08:00)"
+                value="utc8"
+              />
+              <SelectItem
+                text="America/São Paulo Time (UTC-03:00)"
+                value="utc3"
+              />
+            </Select>
           </div>
 
           <Divider />
 
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
               Bio
               <span className="mt-0.5  block text-sm font-normal text-zinc-500">
                 Write a short introduction.
               </span>
             </label>
+
+            <TextArea.Root>
+              <TextArea.Header />
+              <TextArea.Control
+                id="bio"
+                defaultValue="I'm a Product Designer based in Melbourne, Australia. I specialise in UX/UI design, brand strategy, and Webflow development."
+              />
+            </TextArea.Root>
           </div>
 
           <Divider />
 
-          <div className="grid-cols-form grid gap-3">
+          <div className="grid grid-cols-form gap-3">
             <label
               htmlFor="projects"
               className="text-sm font-medium text-zinc-700"
@@ -182,6 +186,12 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
+
+            <FileInput.Root>
+              <FileInput.Trigger />
+              <FileInput.FileList />
+              <FileInput.Control multiple />
+            </FileInput.Root>
           </div>
 
           <Divider />
