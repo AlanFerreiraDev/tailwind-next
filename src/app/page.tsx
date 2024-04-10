@@ -99,7 +99,7 @@ export default function Home() {
 
             <FileInput.Root className="flex items-start gap-5">
               <FileInput.ImagePreview />
-              <FileInput.Trigger />
+              <FileInput.Trigger text="SVG, PNG, JPG or GIF (max. 800x400px)" />
               <FileInput.Control />
             </FileInput.Root>
           </div>
@@ -188,7 +188,7 @@ export default function Home() {
             </label>
 
             <FileInput.Root>
-              <FileInput.Trigger />
+              <FileInput.Trigger text="DOC, PDF and similar types of the documents." />
               <FileInput.FileList />
               <FileInput.Control multiple />
             </FileInput.Root>

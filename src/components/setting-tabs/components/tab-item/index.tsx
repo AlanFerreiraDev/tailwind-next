@@ -12,10 +12,12 @@ export interface TabItemProps {
 export function TabItem({ title, value, isSelected = false }: TabItemProps) {
   return (
     <Tabs.Trigger
-      className="relative px-1 pb-4 text-sm font-medium text-zinc-500 hover:text-violet-700 data-[state=active]:text-violet-700"
+      className="group relative px-1 pb-4 text-sm font-medium text-zinc-500 outline-none"
       value={value}
     >
-      <span>{title}</span>
+      <span className="rounded-lg group-focus-visible:border-violet-300 group-focus-visible:ring-4 group-focus-visible:ring-violet-100 group-focus-visible:ring-offset-4 group-focus-visible:duration-150">
+        {title}
+      </span>
 
       {isSelected && (
         <motion.div
