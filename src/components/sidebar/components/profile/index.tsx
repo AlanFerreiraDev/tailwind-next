@@ -32,8 +32,12 @@ interface ProfileInfoProps extends ComponentProps<'div'> {
 function ProfileInfo({ name, email, ...props }: ProfileInfoProps) {
   return (
     <div className="flex flex-col truncate" {...props}>
-      <span className="text-sm font-semibold text-zinc-700">{name}</span>
-      <span className="truncate text-sm text-zinc-500">{email}</span>
+      <span className="text-sm font-semibold text-zinc-700 dark:text-zinc-100">
+        {name}
+      </span>
+      <span className="truncate text-sm text-zinc-500 dark:text-zinc-400">
+        {email}
+      </span>
     </div>
   )
 }

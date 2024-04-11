@@ -7,7 +7,7 @@ export interface TextAreaProps extends ComponentProps<'div'> {}
 
 export function TextAreaHeader(props: TextAreaProps) {
   return (
-    <div className="grid grid-cols-2 gap-3" {...props}>
+    <div className="flex flex-col gap-3 lg:grid lg:grid-cols-2" {...props}>
       <Select placeholder="" defaultValue="normal">
         <SelectItem text="Normal Text" value="normal" defaultChecked />
         <SelectItem text="Markdown" value="md" />

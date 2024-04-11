@@ -1,4 +1,5 @@
 import { ComponentProps, ElementType } from 'react'
+import { twMerge } from 'tailwind-merge'
 
 interface NavItemPrefixProps extends ComponentProps<'div'> {}
 
@@ -14,7 +15,11 @@ function NavItemRoot({ path, ...props }: NavItemRootProps) {
   return (
     <a
       href={path}
-      className="group flex items-center gap-3 rounded px-3 py-2 hover:bg-violet-50"
+      className={twMerge(
+        'group flex items-center gap-3 rounded px-3 py-2 hover:bg-violet-50',
+        'dark:hover:bg-zinc-800',
+        props.className,
+      )}
       {...props}
     />
   )
@@ -27,7 +32,11 @@ interface NavItemControlProps extends ComponentProps<'span'> {
 function NavItemControl({ title, ...props }: NavItemControlProps) {
   return (
     <span
-      className="font-medium text-zinc-800 group-hover:text-violet-500"
+      className={twMerge(
+        'font-medium text-zinc-800 group-hover:text-violet-500',
+        'dark:text-zinc-100 dark:group-hover:text-violet-300',
+        props.className,
+      )}
       {...props}
     >
       {title}

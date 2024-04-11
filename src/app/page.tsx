@@ -4,20 +4,29 @@ import { Mail } from 'lucide-react'
 import * as FileInput from '@/components/form/file-input'
 import * as TextArea from '@/components/form/textarea'
 import { Button } from '@/components/button'
+import { ThemeChangerButton } from '@/components/theme-changer-button'
 
 export default function Home() {
   return (
     <>
-      <h1 className="text-3xl font-medium text-zinc-900">Settings</h1>
+      <div className="flex w-full items-center justify-between">
+        <h1 className="text-3xl font-medium text-zinc-900 dark:text-zinc-100">
+          Settings
+        </h1>
+
+        <ThemeChangerButton />
+      </div>
 
       <SettingsTabs />
 
       <div className="mt-6 flex flex-col">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-baseline justify-between gap-4 lg:flex-row lg:items-center">
           <div className="space-y-2">
-            <h2 className="text-lg font-medium text-zinc-900">Personal Info</h2>
+            <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">
+              Personal Info
+            </h2>
 
-            <span className="text-sm text-zinc-500">
+            <span className="text-sm text-zinc-500 dark:text-zinc-400">
               Update your photo and personal details here.
             </span>
           </div>
@@ -39,30 +48,39 @@ export default function Home() {
           id="settings"
           action=""
         >
-          <div className="grid grid-cols-form gap-3">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
               htmlFor="firstName"
-              className="text-sm font-medium text-zinc-700"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
               Name
             </label>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
               <Input.Root>
                 <Input.Control id="firstname" defaultValue="Alan" />
               </Input.Root>
 
-              <Input.Root>
-                <Input.Control defaultValue="Ferreira" />
-              </Input.Root>
+              <div className="flex flex-col gap-3 lg:block">
+                <label
+                  htmlFor="lastName"
+                  className="text-sm font-medium text-zinc-700 lg:sr-only dark:text-zinc-100"
+                >
+                  Last Name
+                </label>
+
+                <Input.Root>
+                  <Input.Control id="lastName" defaultValue="Ferreira" />
+                </Input.Root>
+              </div>
             </div>
           </div>
 
           <Divider />
 
-          <div className="grid grid-cols-form gap-3">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
               htmlFor="email"
-              className="text-sm font-medium text-zinc-700"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
               Email Address
             </label>
@@ -80,10 +98,10 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid grid-cols-form gap-3">
+          <div className="flex grid-cols-form flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
               htmlFor="photo"
-              className="text-sm font-medium text-zinc-700"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
               Your photo
               <span className="mt-0.5  block text-sm font-normal text-zinc-500">
@@ -91,7 +109,7 @@ export default function Home() {
               </span>
             </label>
 
-            <FileInput.Root className="flex items-start gap-5">
+            <FileInput.Root className="flex flex-col gap-5 lg:flex-row lg:items-start">
               <FileInput.ImagePreview />
               <FileInput.Trigger text="SVG, PNG, JPG or GIF (max. 800x400px)" />
               <FileInput.Control />
@@ -100,8 +118,11 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid grid-cols-form gap-3">
-            <label htmlFor="role" className="text-sm font-medium text-zinc-700">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
+            <label
+              htmlFor="role"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+            >
               Role
             </label>
             <Input.Root>
@@ -111,10 +132,10 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid grid-cols-form gap-3">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
               htmlFor="country"
-              className="text-sm font-medium text-zinc-700"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
               Country
             </label>
@@ -129,10 +150,10 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid grid-cols-form gap-3">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
               htmlFor="timezone"
-              className="text-sm font-medium text-zinc-700"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
               Time Zone
             </label>
@@ -151,8 +172,11 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid grid-cols-form gap-3">
-            <label htmlFor="bio" className="text-sm font-medium text-zinc-700">
+          <div className="flex flex-col gap-3 lg:grid lg:grid-cols-form">
+            <label
+              htmlFor="bio"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
+            >
               Bio
               <span className="mt-0.5  block text-sm font-normal text-zinc-500">
                 Write a short introduction.
@@ -170,10 +194,10 @@ export default function Home() {
 
           <Divider />
 
-          <div className="grid grid-cols-form gap-3">
+          <div className="flex grid-cols-form flex-col gap-3 lg:grid lg:grid-cols-form">
             <label
               htmlFor="projects"
-              className="text-sm font-medium text-zinc-700"
+              className="text-sm font-medium text-zinc-700 dark:text-zinc-300"
             >
               Portfolio projects
               <span className="mt-0.5  block text-sm font-normal text-zinc-500">

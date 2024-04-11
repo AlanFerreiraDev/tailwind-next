@@ -5,7 +5,7 @@ interface LogoRootProps extends React.ComponentProps<'strong'> {}
 function LogoRoot(props: LogoRootProps) {
   return (
     <strong
-      className="mx-1 flex items-center gap-2 text-xl font-semibold text-zinc-900"
+      className="mx-1 flex items-center gap-2 text-xl font-semibold text-zinc-900 dark:text-zinc-100"
       {...props}
     />
   )
